@@ -1,76 +1,37 @@
+
 import { usePWA } from './hooks/usePWA';
+import Layout from './components/Layout/Layout';
 
 export default function App() {
   const { isInstallable, installApp, isOnline } = usePWA();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        fontFamily: "sans-serif",
-        background: "#f9fafb",
-        color: "#111",
-        textAlign: "center",
-        padding: "2rem",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "2.5rem",
-          marginBottom: "0.5rem",
-          fontWeight: 600,
-        }}
-      >
-        Welcome to{" "}
-        <span style={{ color: "#2563eb" }}>Digital_Marketing_Infolanze</span> 🚀
-      </h1>
-      <p style={{ fontSize: "1.1rem", color: "#555", marginBottom: "2rem" }}>
-        Your PWA is ready. Start building amazing things!
-      </p>
-      
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center" }}>
-        <div style={{ 
-          padding: "0.5rem 1rem", 
-          background: "#2563eb", 
-          color: "white", 
-          borderRadius: "0.5rem",
-          fontSize: "0.9rem"
-        }}>
-          📱 PWA Enabled
+    <Layout>
+      cdsf
+      {/* <div className="flex flex-col justify-center items-center min-h-[70vh] text-center p-8">
+        <h1 className="text-4xl mb-2 font-bold">
+          Welcome to <span className="text-blue-600">Digital_Marketing_Infolanze</span> 🚀
+        </h1>
+        <p className="text-lg text-gray-600 mb-8">
+          Your PWA is ready. Start building amazing things!
+        </p>
+        <div className="flex flex-col gap-4 items-center">
+          <div className="px-4 py-2 bg-blue-600 text-white rounded-lg text-base">
+            📱 PWA Enabled
+          </div>
+          <div className={`px-4 py-2 rounded-lg text-base text-white ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}> 
+            {isOnline ? "🟢 Online" : "🔴 Offline"}
+          </div>
+          {isInstallable && (
+            <button
+              onClick={installApp}
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium text-lg hover:bg-blue-700 transition"
+            >
+              📲 Install App
+            </button>
+          )}
         </div>
-        
-        <div style={{ 
-          padding: "0.5rem 1rem", 
-          background: isOnline ? "#10b981" : "#ef4444", 
-          color: "white", 
-          borderRadius: "0.5rem",
-          fontSize: "0.9rem"
-        }}>
-          {isOnline ? "🟢 Online" : "🔴 Offline"}
-        </div>
-        
-        {isInstallable && (
-          <button
-            onClick={installApp}
-            style={{
-              padding: "0.75rem 1.5rem",
-              background: "#2563eb",
-              color: "white",
-              border: "none",
-              borderRadius: "0.5rem",
-              cursor: "pointer",
-              fontSize: "1rem",
-              fontWeight: "500"
-            }}
-          >
-            📲 Install App
-          </button>
-        )}
-      </div>
-    </div>
+      </div> */}
+    </Layout>
   );
 }
