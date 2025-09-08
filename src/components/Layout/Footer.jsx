@@ -79,7 +79,7 @@ const Footer = () => {
         {/* Subscribe + Socials */}
         <div>
           <h3 className="text-black font-semibold mb-4">Subscribe Us</h3>
-          <div className="flex w-full max-w-sm">
+          {/* <div className="flex w-full max-w-sm">
             <input
               type="email"
               className="w-full border border-gray-300 focus:border-blue-600 bg-gray-50 text-black placeholder-gray-400 rounded-l-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
@@ -88,7 +88,7 @@ const Footer = () => {
             <button className="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-500 transition">
               <IoMdSend className="w-5 h-5" />
             </button>
-          </div>
+          </div> */}
 
           <div className="flex space-x-4 mt-6">
             <a

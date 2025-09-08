@@ -1,68 +1,163 @@
-import React from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { contactForm, resetState } from "../redux/features/contactSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaUser, FaEnvelope, FaTag, FaRegCommentDots } from "react-icons/fa";
 
 const ContactUs = () => {
+  const dispatch = useDispatch();
+  const { loading, success, error } = useSelector((state) => state.contact);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(contactForm(formData));
+  };
+
+  useEffect(() => {
+    if (success) {
+      toast.success(success, { position: "top-right", autoClose: 5000 });
+      setFormData({ name: "", email: "", subject: "", description: "" });
+      dispatch(resetState());
+    }
+    if (error) {
+      toast.error(error, { position: "top-right", autoClose: 5000 });
+      dispatch(resetState());
+    }
+  }, [success, error, dispatch]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex flex-col items-center py-16 px-4 sm:px-6 lg:px-16">
-      
-      {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Get in Touch</h1>
-        <p className="text-gray-600 text-lg">
-          We'd love to hear from you! Fill out the form or reach us through our contact info.
-        </p>
-      </div>
+    <div className="relative bg-white flex flex-col items-center py-10 px-4 sm:px-6 lg:px-16 overflow-hidden">
+      <ToastContainer />
+      <svg
+  className="absolute top-0 left-0 w-full h-full pointer-events-none"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+  viewBox="0 0 1440 320"
+>
+  {/* Layer 1 */}
+  <path
+    fill="#1e3a8a"
+    fillOpacity="0.03"
+    d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,138.7C672,160,768,192,864,186.7C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+  />
+  {/* Layer 2 */}
+  <path
+    fill="#2563eb"
+    fillOpacity="0.03"
+    d="M0,128L48,117.3C96,107,192,85,288,80C384,75,480,85,576,106.7C672,128,768,160,864,154.7C960,149,1056,107,1152,96C1248,85,1344,107,1392,117.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+  />
+  {/* Layer 3 */}
+  <path
+    fill="#1e40af"
+    fillOpacity="0.03"
+    d="M0,96L48,85.3C96,75,192,53,288,48C384,43,480,53,576,69.3C672,85,768,107,864,112C960,117,1056,107,1152,101.3C1248,96,1344,96,1392,96L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+  />
+  {/* Layer 4 */}
+  <path
+    fill="#4338ca"
+    fillOpacity="0.03"
+    d="M0,64L48,53.3C96,43,192,21,288,16C384,11,480,21,576,37.3C672,53,768,75,864,80C960,85,1056,75,1152,69.3C1248,64,1344,64,1392,64L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+  />
+</svg>
 
-      {/* Contact Info Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 w-full max-w-5xl">
-        <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-          <FaPhoneAlt className="text-blue-600 text-3xl mb-4" />
-          <h3 className="font-semibold text-lg mb-2">Phone</h3>
-          <p className="text-gray-500">+1 234 567 890</p>
-        </div>
-        <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-          <FaEnvelope className="text-blue-600 text-3xl mb-4" />
-          <h3 className="font-semibold text-lg mb-2">Email</h3>
-          <p className="text-gray-500">contact@company.com</p>
-        </div>
-        <div className="bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform">
-          <FaMapMarkerAlt className="text-blue-600 text-3xl mb-4" />
-          <h3 className="font-semibold text-lg mb-2">Location</h3>
-          <p className="text-gray-500">123 Main Street, City, Country</p>
-        </div>
-      </div>
 
-      {/* Contact Form */}
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Send Us a Message</h2>
-        <form className="grid grid-cols-1 gap-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <input
-            type="text"
-            placeholder="Subject"
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={5}
-            className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Send Message
-          </button>
-        </form>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-center md:text-left">
+        {/* Left Section */}
+        <div className="mb-12 text-center md:text-left">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            Boost Your Business with Digital Marketing
+          </h1>
+          <p className="text-gray-600 text-lg">
+            We help brands grow online with targeted strategies in SEO, social
+            media, content, and ads. Connect with us today to take your digital
+            presence to the next level.
+          </p>
+        </div>
+
+        {/* Right Section (Form) */}
+        <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-3xl">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
+            Send Us a Message
+          </h2>
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 text-sm">
+            {/* Name */}
+            <div className="flex items-center border border-gray-300 rounded-lg p-2 focus-within:ring-2 focus-within:ring-blue-500">
+              <FaUser className="text-gray-400 mr-2" />
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                placeholder="Your Name"
+                onChange={handleChange}
+                className="w-full outline-none text-sm"
+                required
+              />
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center border border-gray-300 rounded-lg p-2 focus-within:ring-2 focus-within:ring-blue-500">
+              <FaEnvelope className="text-gray-400 mr-2" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                placeholder="Your Email"
+                onChange={handleChange}
+                className="w-full outline-none text-sm"
+                required
+              />
+            </div>
+
+            {/* Subject */}
+            <div className="flex items-center border border-gray-300 rounded-lg p-2 focus-within:ring-2 focus-within:ring-blue-500">
+              <FaTag className="text-gray-400 mr-2" />
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                placeholder="Subject"
+                onChange={handleChange}
+                className="w-full outline-none text-sm"
+                required
+              />
+            </div>
+
+            {/* Message */}
+            <div className="flex items-start border border-gray-300 rounded-lg p-2 focus-within:ring-2 focus-within:ring-blue-500">
+              <FaRegCommentDots className="text-gray-400 mr-2 mt-2" />
+              <textarea
+                name="description"
+                value={formData.description}
+                placeholder="Your Message"
+                rows={5}
+                onChange={handleChange}
+                className="w-full outline-none text-sm"
+                required
+              />
+            </div>
+
+            {/* Button */}
+            <button
+              type="submit"
+              className="bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

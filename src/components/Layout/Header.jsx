@@ -260,6 +260,7 @@ import {
 } from "@headlessui/react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"; // theme icons
 import { Link } from 'react-router-dom';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -293,14 +294,10 @@ const Header = () => {
         <div className="flex items-center gap-4">
           {/* Theme toggle */}
           <button
-            onClick={toggleTheme}
+            onClick={toggleTheme} // or any other action
             className="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            {darkMode ? (
-              <SunIcon className="h-6 w-6 text-yellow-400" />
-            ) : (
-              <MoonIcon className="h-6 w-6 text-gray-600" />
-            )}
+            <FaWhatsapp className="h-6 w-6 text-green-500" />
           </button>
 
           {/* Login button */}

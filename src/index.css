@@ -12,19 +12,25 @@ body {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-50%);
+    transform: translateY(-51%);
   }
 }
 
 .gallery-container {
-  height: 600px; /* Adjust based on your needs */
+  height: 800px; /* Adjust based on your needs */
   overflow: hidden;
   position: relative;
 }
-
 .gallery-content {
-  animation: slideUp 8s linear infinite;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 15s linear infinite;
+   gap: 20px;
 }
+.gallery-content > div {
+  margin-bottom: 8px; /* controls gap between batches */
+}
+
 
 .outline-text {
   color: transparent;
