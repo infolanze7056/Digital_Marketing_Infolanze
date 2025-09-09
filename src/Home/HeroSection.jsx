@@ -21,7 +21,7 @@ const HeroSection = () => {
                     <div className="max-w-xl">
                         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
                             {/* Grow Your <span className="gradient-bg outline-text">Traffic</span>, <br /> */}
-                            {/* Boost Your <span className="gradient-bg outline-text">Leads</span>, <br /> */}
+                            Boost Your <span className="gradient-bg outline-text">Leads</span>, <br />
                             Scale Your <span className="gradient-bg outline-text">Sales</span>
                         </h1>
 
