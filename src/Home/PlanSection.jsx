@@ -17,7 +17,7 @@ const PlanSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                 {/* STARTER */}
-                <div className="border border-black bg-white relative rounded-xl shadow-md overflow-hidden flex flex-col font-sans">
+                <div className="border border-black bg-white relative rounded-xl shadow-md overflow-hidden flex flex-col font-sans cursor-pointer">
                     <div className="p-6 text-center">
                         <h3 className="text-lg font-bold text-gray-900">STARTER</h3>
                         <p className="mt-2 text-3xl font-extrabold text-gray-900">₹2,499</p>
@@ -50,7 +50,7 @@ const PlanSection = () => {
                 </div>
 
                 {/* GROWTH */}
-                <div className="border border-black bg-white relative rounded-xl shadow-xl overflow-hidden flex flex-col font-sans scale-105">
+                <div className="border border-black bg-white relative rounded-xl shadow-xl overflow-hidden flex flex-col font-sans scale-105 cursor-pointer">
                     <div className="absolute top-1 right-1 flex items-center gap-1 bg-gradient-to-br from-gray-800 via-gray-900 to-black text-orange-300 font-bold text-xs px-3 py-1 rounded-full shadow-md border border-orange-400/40">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-orange-400 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2l2.09 6.26L20 9.27l-5 3.64 1.91 6.09L12 16.9l-4.91 2.1L9 12.91 4 9.27l5.91-.99L12 2z" />
@@ -93,7 +93,7 @@ const PlanSection = () => {
                 </div>
 
                 {/* PREMIUM */}
-                <div className="border border-black bg-white relative rounded-xl shadow-md overflow-hidden flex flex-col font-sans">
+                <div className="border border-black bg-white relative rounded-xl shadow-md overflow-hidden flex flex-col font-sans cursor-pointer">
                     <div className="p-6 text-center">
                         <h3 className="text-lg font-bold text-gray-900">PREMIUM</h3>
                         <p className="mt-2 text-3xl font-extrabold text-gray-900">₹11,999</p>
