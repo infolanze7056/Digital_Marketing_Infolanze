@@ -5,6 +5,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import logo from "./../../assets/InfoLanze-Logo3.png"
 import { IoMdSend } from "react-icons/io";
 
 const Footer = () => {
@@ -14,9 +15,9 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <img
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+            src={logo}
             alt="Infolanze Logo"
-            className="h-10 mb-4"
+            className=" mb-4"
           />
           <p className="text-sm leading-6">
             Infolanze is your trusted partner for business solutions and
@@ -70,9 +71,9 @@ const Footer = () => {
         <div>
           <h3 className="text-black font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-2 text-sm">
-            <li>Email: support@infolanze.com</li>
-            <li>Phone: +91 98765 43210</li>
-            <li>Address: 123 Business Street, New Delhi, India</li>
+            <li>Email: infolanze.tech@gmail.com</li>
+            <li>Phone: +91 7016160435</li>
+            <li>Address: Nikol Ahmdabad-382350</li>
           </ul>
         </div>
 
@@ -92,7 +93,9 @@ const Footer = () => {
 
           <div className="flex space-x-4 mt-6">
             <a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61555278311151"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-md bg-gray-200 text-gray-700 hover:bg-blue-600 hover:text-white transition"
             >
               <FaFacebookF />
@@ -104,13 +107,17 @@ const Footer = () => {
               <FaTwitter />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/infolanze24/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-md bg-gray-200 text-gray-700 hover:bg-blue-700 hover:text-white transition"
             >
               <FaLinkedinIn />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/infolanze/?igsh=OXR2d2I4Mm1mMDZt#"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 rounded-md bg-gray-200 text-gray-700 hover:bg-pink-600 hover:text-white transition"
             >
               <FaInstagram />

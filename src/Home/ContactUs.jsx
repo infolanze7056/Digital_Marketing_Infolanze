@@ -4,6 +4,7 @@ import { contactForm, resetState } from "../redux/features/contactSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaUser, FaEnvelope, FaTag, FaRegCommentDots } from "react-icons/fa";
+import { IoIosCall } from "react-icons/io";
 
 const ContactUs = () => {
   const dispatch = useDispatch();
@@ -115,6 +116,19 @@ const ContactUs = () => {
                 value={formData.email}
                 placeholder="Your Email"
                 onChange={handleChange}
+                className="w-full outline-none text-sm"
+                required
+              />
+            </div>
+
+            <div className="flex items-center border border-gray-300 rounded-lg p-2 focus-within:ring-2 focus-within:ring-blue-500">
+              <IoIosCall  className="text-gray-400 mr-2" />
+              <input
+                type="email"
+                name="email"
+                // value={formData.email}
+                placeholder="Your Phone Number"
+                // onChange={handleChange}
                 className="w-full outline-none text-sm"
                 required
               />

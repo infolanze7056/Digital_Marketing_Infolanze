@@ -261,6 +261,7 @@ import {
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"; // theme icons
 import { Link } from 'react-router-dom';
 import { FaWhatsapp } from "react-icons/fa";
+import logo from "./../../assets/InfoLanze-Logo3.png"
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -291,13 +292,10 @@ const Header = () => {
         <div className="flex flex-1">
           <Link to="/" className="flex items-center gap-2">
             <img
-              alt="Company Logo"
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
+              src={logo}
+              alt="Infolanze Logo"
+              className="h-7"
             />
-            <span className="font-bold text-gray-900 dark:text-white text-lg">
-              Digital Marketing
-            </span>
           </Link>
         </div>
 
@@ -307,7 +305,7 @@ const Header = () => {
           <button
             onClick={() => openWhatsApp("Hello, I'm interested in your services.")}
             className="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-            // aria-label="Open WhatsApp chat"
+          // aria-label="Open WhatsApp chat"
           >
             <FaWhatsapp className="h-6 w-6 text-green-500" />
           </button>
