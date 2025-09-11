@@ -270,6 +270,17 @@ const Header = () => {
     document.documentElement.classList.toggle("dark"); // Tailwind dark mode
   };
 
+  const openWhatsApp = (message) => {
+    const phone = "7016160435";
+
+    const base = `https://wa.me/${phone}`;
+    const url = message ? `${base}?text=${encodeURIComponent(message)}` : base;
+
+    // Open in new tab safely
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <header className="bg-[#EEEEEE] dark:bg-gray-900 shadow sticky top-0 z-50">
       <nav
@@ -294,12 +305,12 @@ const Header = () => {
         <div className="flex items-center gap-4">
           {/* Theme toggle */}
           <button
-            onClick={toggleTheme} // or any other action
+            onClick={() => openWhatsApp("Hello, I'm interested in your services.")}
             className="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+            // aria-label="Open WhatsApp chat"
           >
             <FaWhatsapp className="h-6 w-6 text-green-500" />
           </button>
-
           {/* Login button */}
           <Link
             to="/contact"
