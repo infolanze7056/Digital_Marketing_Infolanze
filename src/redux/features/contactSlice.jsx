@@ -5,7 +5,7 @@ export const contactForm = createAsyncThunk(
     "contact/contactForm",
     async (formdata) => {
         try {
-            const response = await axiosConfig.post("/contact", formdata);
+            const response = await axiosConfig.post("/contact/contact", formdata);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || "Something went wrong");
