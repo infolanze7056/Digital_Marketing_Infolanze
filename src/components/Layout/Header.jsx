@@ -261,7 +261,7 @@ import {
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"; // theme icons
 import { Link } from 'react-router-dom';
 import { FaWhatsapp } from "react-icons/fa";
-import logo from "./../../assets/InfoLanze-Logo3.png"
+import logo from "../../assets/infolanze-logo3.png"
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);

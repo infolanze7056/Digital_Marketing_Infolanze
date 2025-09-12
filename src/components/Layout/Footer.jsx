@@ -5,7 +5,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
-import logo from "./../../assets/InfoLanze-Logo3.png"
+import logo from "../../assets/infolanze-logo3.png"
 import { IoMdSend } from "react-icons/io";
 
 const Footer = () => {
