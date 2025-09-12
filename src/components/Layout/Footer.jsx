@@ -100,12 +100,12 @@ const Footer = () => {
             >
               <FaFacebookF />
             </a>
-            <a
+            {/* <a
               href="#"
               className="flex items-center justify-center w-10 h-10 rounded-md bg-gray-200 text-gray-700 hover:bg-blue-400 hover:text-white transition"
             >
               <FaTwitter />
-            </a>
+            </a> */}
             <a
               href="https://www.linkedin.com/company/infolanze24/"
               target="_blank"

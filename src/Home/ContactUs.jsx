@@ -13,6 +13,7 @@ const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     description: "",
   });
@@ -29,7 +30,7 @@ const ContactUs = () => {
   useEffect(() => {
     if (success) {
       toast.success(success, { position: "top-right", autoClose: 5000 });
-      setFormData({ name: "", email: "", subject: "", description: "" });
+      setFormData({ name: "", email: "",phone: "", subject: "", description: "" });
       dispatch(resetState());
     }
     if (error) {
@@ -124,11 +125,11 @@ const ContactUs = () => {
             <div className="flex items-center border border-gray-300 rounded-lg p-2 focus-within:ring-2 focus-within:ring-blue-500">
               <IoIosCall  className="text-gray-400 mr-2" />
               <input
-                type="email"
-                name="email"
-                // value={formData.email}
+                type="phone"
+                name="phone"
+                value={formData.phone}
                 placeholder="Your Phone Number"
-                // onChange={handleChange}
+                onChange={handleChange}
                 className="w-full outline-none text-sm"
                 required
               />

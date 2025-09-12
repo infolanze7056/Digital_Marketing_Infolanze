@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Create axios instance
 const axiosConfig = axios.create({
-  baseURL:  "http://localhost:3000/api", 
+  // baseURL:  "http://localhost:3000/api", 
+  baseURL:  "https://contact-backend-zeta.vercel.app/api", 
   headers: {
     "Content-Type": "application/json",
   },
